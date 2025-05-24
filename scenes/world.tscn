@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://88x22sx15ywj"]
+
+[ext_resource type="TileSet" uid="uid://c651twrilpq36" path="res://tiles/new_tile_set.tres" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://0qtylimn3dn8" path="res://scenes/player.tscn" id="2_4wyf3"]
+[ext_resource type="AudioStream" uid="uid://b5sc7tbstyvyv" path="res://assets/music/DOMM-triptych-part-2-_H60L4d4sBNc_.ogg" id="3_4wyf3"]
+
+[node name="TestMap" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_rwgxs")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 131072, 1, -1, 65536, 1, 65535, 131072, 4, 0, 65536, 4, 65534, 65536, 1, 1, 262144, 1, 131070, 262144, 805306369, 65537, 262144, 1342177281, 65536, 131072, 7, 131071, 65536, 7, 196607, 131072, 805306378, 131072, 65536, 805306378, -65534, 458752, 4, -65533, 524288, 4, 2, 458752, 4, 3, 524288, 4, 65538, 458752, 4, 65539, 524288, 4, -65532, 458752, 4, 4, 458752, 4, 65540, 458752, 4, 196605, 393216, 6, 262141, 393216, 6, 327677, 393216, 6, 196606, 393216, 6, 262142, 393216, 6, 327678, 393216, 6)
+
+[node name="Player" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(23, 26)
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4wyf3")
+autoplay = true
