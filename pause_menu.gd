@@ -16,3 +16,10 @@ func toggle_pause() -> void:
 	
 	# 2. Show or hide this menu based on that state
 	visible = new_pause_state
+
+
+func _on_resume_button_pressed() -> void:
+	toggle_pause()
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
