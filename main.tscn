@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbdil4fpke08o" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dte65k6lxv5pw" path="res://maps/starting_room/starting_room.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://cd7r7hbgb8yqm" path="res://pause_menu.gd" id="2_h2yge"]
 
 [sub_resource type="Animation" id="Animation_0xm2m"]
 length = 0.001
@@ -59,10 +60,41 @@ metadata/_edit_use_anchors_ = true
 libraries/ = SubResource("AnimationLibrary_1bvp3")
 
 [node name="PauseMenu" type="Control" parent="UILayer" unique_id=1316148215]
+process_mode = 3
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_h2yge")
+
+[node name="PauseBackground" type="ColorRect" parent="UILayer/PauseMenu" unique_id=1276137244]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="Label" type="Label" parent="UILayer/PauseMenu" unique_id=755355547]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 33
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="WorldContainer" type="Node2D" parent="." unique_id=1898091088]
 
