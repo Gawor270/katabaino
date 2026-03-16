@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://u4n607p5bif0"]
+
+[node name="BaseMap" type="Node2D" unique_id=706549194]
+
+[node name="FloorLayer" type="TileMapLayer" parent="." unique_id=1217231674]
+z_index = -1
+
+[node name="YSortContainer" type="Node2D" parent="." unique_id=1533275368]
+y_sort_enabled = true
+
+[node name="WallLayer" type="TileMapLayer" parent="YSortContainer" unique_id=189998327]
+y_sort_enabled = true
+
+[node name="Entities" type="Node2D" parent="YSortContainer" unique_id=1479647107]
+
+[node name="ForegroundLayer" type="TileMapLayer" parent="." unique_id=813865383]
+z_index = 10

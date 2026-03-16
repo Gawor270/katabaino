@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cgoahmo61ji44"]
+
+[ext_resource type="Script" uid="uid://dbdil4fpke08o" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dte65k6lxv5pw" path="res://maps/starting_room/starting_room.tscn" id="2_0xm2m"]
+
+[sub_resource type="Animation" id="Animation_0xm2m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h2yge"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1bvp3"]
+_data = {
+&"RESET": SubResource("Animation_0xm2m"),
+&"fade": SubResource("Animation_h2yge")
+}
+
+[node name="Main" type="Node" unique_id=1418349989]
+script = ExtResource("1_ig7tw")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1968609665]
+layer = 100
+
+[node name="ScreenFade" type="ColorRect" parent="UILayer" unique_id=1391033140]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UILayer/ScreenFade" unique_id=1991697512]
+libraries/ = SubResource("AnimationLibrary_1bvp3")
+
+[node name="PauseMenu" type="Control" parent="UILayer" unique_id=1316148215]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WorldContainer" type="Node2D" parent="." unique_id=1898091088]
+
+[node name="StartingRoom" parent="WorldContainer" unique_id=706549194 instance=ExtResource("2_0xm2m")]
+position = Vector2(0, 3)
+
+[node name="GlobalMusic" type="AudioStreamPlayer" parent="." unique_id=120677241]

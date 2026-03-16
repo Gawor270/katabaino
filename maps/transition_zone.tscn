@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ba755qosswf3w"]
+
+[ext_resource type="Script" uid="uid://cx5kv8fn27bxh" path="res://maps/transition_zone.gd" id="1_tau7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scm7v"]
+size = Vector2(56, 50)
+
+[node name="TransitionZone" type="Area2D" unique_id=1175536577]
+collision_layer = 0
+script = ExtResource("1_tau7m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1496580386]
+shape = SubResource("RectangleShape2D_scm7v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
