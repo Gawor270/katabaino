@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ojhrldi4w318" path="res://assets/sprites/Texture/TX Props.png" id="4_wa7bi"]
 [ext_resource type="PackedScene" uid="uid://b1xru4iyb3vpe" path="res://player/player.tscn" id="5_xiwbd"]
 [ext_resource type="PackedScene" uid="uid://ba755qosswf3w" path="res://maps/transition_zone.tscn" id="7_m7kl7"]
+[ext_resource type="PackedScene" uid="uid://bffm7bx4da2v6" path="res://interactables/items/bicycle.tscn" id="8_wa7bi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2j4b"]
 texture = ExtResource("3_m7kl7")
@@ -639,3 +640,6 @@ y_sort_enabled = true
 position = Vector2(55, -42)
 next_scene_path = "uid://baeafpyqwkf55"
 target_spawn_point = "SpawnPoint"
+
+[node name="Bicycle" parent="YSortContainer/Entities" index="2" unique_id=127545891 instance=ExtResource("8_wa7bi")]
+position = Vector2(51, 44)

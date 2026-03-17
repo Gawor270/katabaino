@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bffm7bx4da2v6"]
+
+[ext_resource type="PackedScene" uid="uid://chxgek4yu2hyk" path="res://interactables/interactable.tscn" id="1_dkd7x"]
+[ext_resource type="Script" uid="uid://d00kn5eij3eh8" path="res://interactables/items/bicycle.gd" id="2_uragj"]
+[ext_resource type="Texture2D" uid="uid://dlpgluk87crxe" path="res://assets/sprites/bike.png" id="3_x81ar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1y5f"]
+size = Vector2(22, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkd7x"]
+size = Vector2(22, 16)
+
+[node name="Bicycle" unique_id=127545891 instance=ExtResource("1_dkd7x")]
+script = ExtResource("2_uragj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=313566194]
+texture = ExtResource("3_x81ar")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1" unique_id=874563541]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=1444175953]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_b1y5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2" unique_id=1649819895]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_dkd7x")

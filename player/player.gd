@@ -61,3 +61,17 @@ func _unhandled_input(event: InputEvent) -> void:
 			# Does the thing we hit have our custom function?
 			if target.has_method("_on_interacted"):
 				target._on_interacted()
+		
+		# Did we press 'X', AND do we actually own the bicycle?
+	if event.is_action_pressed("use_effect") and PlayerData.has_bicycle:
+		
+		# Toggle the state (if true, make false. If false, make true)
+		PlayerData.is_riding_bicycle = not PlayerData.is_riding_bicycle
+		
+		# Apply the effect!
+		if PlayerData.is_riding_bicycle:
+			speed = 90.0 # Double speed!
+			print("Equipped Bicycle!")
+		else:
+			speed = 45.0 # Back to normal speed
+			print("Unequipped Bicycle!")

@@ -6,7 +6,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	# "ui_cancel" is Godot's built-in action for the Escape key or gamepad B/Circle
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("pause"):
 		toggle_pause()
 
 func toggle_pause() -> void:
