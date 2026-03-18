@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var level_music: AudioStream
+@onready var player: CharacterBody2D = $YSortContainer/Entities/Player
 
 func _ready() -> void:
 	if level_music:

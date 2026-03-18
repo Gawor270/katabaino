@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dvhioh8gei3a1"]
+
+[ext_resource type="Script" uid="uid://cimy0t3h1utmh" path="res://interactables/NPC/phantom_horse.gd" id="1_6iqlw"]
+[ext_resource type="Texture2D" uid="uid://2kajlvst733x" path="res://assets/sprites/Horse/Horse_Run.png" id="1_s7iks"]
+[ext_resource type="AudioStream" uid="uid://bx23jujpyide7" path="res://assets/audio/sfx/horse_gallop.ogg" id="3_4s548"]
+
+[sub_resource type="Animation" id="Animation_s7iks"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6iqlw"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4s548"]
+_data = {
+&"RESET": SubResource("Animation_s7iks"),
+&"run": SubResource("Animation_6iqlw")
+}
+
+[node name="PhantomHorse" type="Node2D" unique_id=1958358937]
+script = ExtResource("1_6iqlw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1356611411]
+libraries/ = SubResource("AnimationLibrary_4s548")
+autoplay = &"run"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=60488454]
+modulate = Color(0.34020814, 0.34020793, 0.34020796, 1)
+texture = ExtResource("1_s7iks")
+hframes = 6
+
+[node name="GallopSound" type="AudioStreamPlayer2D" parent="." unique_id=1155738123]
+stream = ExtResource("3_4s548")
+max_distance = 250.0
