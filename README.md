@@ -2,6 +2,8 @@
 
 **Autor:** Bernard Gawor
 
+![](screenshots/horse.png)
+
 ---
 
 ## 1. Opis gry
@@ -32,7 +34,7 @@ Gra zbudowana jest z szeregu oddzielnych, połączonych ze sobą map 2D top-down
 
 - **Pokój startowy** – scena tutorialowa, blokuje gracza do momentu potwierdzenia klawiszem
 - **Las** – wstępna przestrzeń eksploracyjna
-- **Głęboki las** – specjalna mapa z zapętlonym przewijaniem: gracz przekraczający krawędź pojawia się po drugiej stronie
+- **Głęboki las** – główna mapa z zapętlonym przewijaniem: gracz przekraczający krawędź pojawia się po drugiej stronie z niej można przenieść się do dwóch map poniżej
 - **Kościół**
 - **Cmentarz**
 
@@ -49,11 +51,11 @@ Kamera śledzi postać gracza (`Camera2D` z wygładzaniem).
 
 ### Przedmioty i ekwipunek
 
-| Przedmiot | Efekt | Klawisz |
-|---|---|---|
+| Przedmiot | Efekt |
+|---|---|
 | **Rower** | Podnosi prędkość do 90 px/s (x2) |
 
-Rower podnoszony jest z ziemi przez interakcję (`Z`). Po podniesieniu znika z mapy i nie można go podnieść ponownie. Umożliwia klikajać `X` przyśpieszenie gracza.
+Rower podnoszony jest z ziemi przez interakcję (`Z`). Po podniesieniu znika z mapy i nie można go podnieść ponownie. Umożliwia (naciskając `X`) przyśpieszenie prędkości poruszania się gracza.
 
 ### NPCe
 
@@ -89,7 +91,7 @@ Rower podnoszony jest z ziemi przez interakcję (`Z`). Po podniesieniu znika z m
 
 | Asset | Źródło |
 |---|---|
-| `erlkonig_slow.ogg` | Klasyczna ballada Schuberta *Erlkönig* – nagranie publiczne |
+| `erlkonig.ogg` | Romantyczna ballada Schuberta *Erlkönig* |
 | `night-ambience.mp3` | Zaimportowany ambient nocny |
 | `wind.mp3` | Efekt wiatru |
 | `church-bell.mp3` | Efekt dzwonu kościelnego |
