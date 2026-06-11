@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b627gw1y3svbf"
-path="res://.godot/imported/sadboy_left_side.png-1ac7dd92a7dc792360a3c60565a65eeb.ctex"
+uid="uid://vyoiu4sms86h"
+path="res://.godot/imported/church.png-4db59c98aa9f1c03d26de11144c20794.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/sadboy_left_side.png"
-dest_files=["res://.godot/imported/sadboy_left_side.png-1ac7dd92a7dc792360a3c60565a65eeb.ctex"]
+source_file="res://assets/sprites/church.png"
+dest_files=["res://.godot/imported/church.png-4db59c98aa9f1c03d26de11144c20794.ctex"]
 
 [params]
 

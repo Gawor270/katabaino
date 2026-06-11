@@ -1,1 +1,5 @@
 .godot/*
+*.x86_64
+*.exe
+*.pck
+*.zip

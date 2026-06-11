@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1pa2fqdqw7n0" path="res://assets/sprites/rielke_sheet.png" id="2_rkbax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
-size = Vector2(10, 1)
+size = Vector2(10, 2)
 
 [sub_resource type="Animation" id="Animation_g1dw6"]
 length = 0.001
@@ -109,7 +109,6 @@ hframes = 4
 vframes = 4
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=2117621074]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_rkbax")
 
 [node name="Anim" type="AnimationPlayer" parent="." unique_id=1411164289]

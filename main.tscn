@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cgoahmo61ji44"]
 
 [ext_resource type="Script" uid="uid://dbdil4fpke08o" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://dte65k6lxv5pw" path="res://maps/starting_room/starting_room.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://cd7r7hbgb8yqm" path="res://pause_menu.gd" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dgogmecrl0ohy" path="res://maps/intro.tscn" id="3_h2yge"]
 
 [sub_resource type="Animation" id="Animation_0xm2m"]
 length = 0.001
@@ -116,8 +116,7 @@ text = "Quit to desktop"
 
 [node name="WorldContainer" type="Node2D" parent="." unique_id=1898091088]
 
-[node name="StartingRoom" parent="WorldContainer" unique_id=706549194 instance=ExtResource("2_0xm2m")]
-position = Vector2(0, 3)
+[node name="Intro" parent="WorldContainer" unique_id=1072497507 instance=ExtResource("3_h2yge")]
 
 [node name="GlobalMusic" type="AudioStreamPlayer" parent="." unique_id=120677241]
 

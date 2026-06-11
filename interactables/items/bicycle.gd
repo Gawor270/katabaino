@@ -1,5 +1,9 @@
 extends "res://interactables/interactable.gd"
 
+func _ready() -> void:
+	if PlayerData.has_bicycle:
+		queue_free()
+
 func _on_interacted():
 	# 1. Put the bike in the global backpack!
 	PlayerData.has_bicycle = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgtaphcwuwlhc"
-path="res://.godot/imported/sadboy.png-e55f5b1819812f31978d2626e7e585b0.ctex"
+uid="uid://d2rt203g5ch2x"
+path="res://.godot/imported/bicycle_ride_sheet.png-e46f91cbe41b0994e77e3bf7af802474.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/sadboy.png"
-dest_files=["res://.godot/imported/sadboy.png-e55f5b1819812f31978d2626e7e585b0.ctex"]
+source_file="res://assets/sprites/bicycle_ride_sheet.png"
+dest_files=["res://.godot/imported/bicycle_ride_sheet.png-e46f91cbe41b0994e77e3bf7af802474.ctex"]
 
 [params]
 

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dgogmecrl0ohy"]
+
+[ext_resource type="Script" uid="uid://cui3684jlv3al" path="res://intro.gd" id="1_8gww4"]
+[ext_resource type="Texture2D" uid="uid://b0n4fj0abyodr" path="res://assets/sprites/forest_background.jpg" id="2_q3k4t"]
+[ext_resource type="AudioStream" uid="uid://cn3q5mmb4icwk" path="res://assets/audio/intro_music.mp3" id="2_rsd8d"]
+[ext_resource type="Texture2D" uid="uid://2kajlvst733x" path="res://assets/sprites/Horse/Horse_Run.png" id="4_q3k4t"]
+
+[sub_resource type="Animation" id="Animation_q3k4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HorseSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_rsd8d"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HorseSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pkt4g"]
+_data = {
+&"RESET": SubResource("Animation_q3k4t"),
+&"run": SubResource("Animation_rsd8d")
+}
+
+[node name="Intro" type="Node2D" unique_id=1072497507]
+script = ExtResource("1_8gww4")
+next_scene_path = "uid://dte65k6lxv5pw"
+target_spawn_point = "EntrancePoint"
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="." unique_id=929028603]
+stream = ExtResource("2_rsd8d")
+autoplay = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=2038946537]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=152866526]
+motion_mirroring = Vector2(1236, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=27304882]
+position = Vector2(80.00001, -169)
+scale = Vector2(3, 3)
+texture = ExtResource("2_q3k4t")
+
+[node name="HorseSprite" type="Sprite2D" parent="." unique_id=126868526]
+texture = ExtResource("4_q3k4t")
+flip_h = true
+hframes = 6
+frame = 1
+
+[node name="HorseAnimation" type="AnimationPlayer" parent="." unique_id=1731444732]
+libraries/ = SubResource("AnimationLibrary_pkt4g")
+autoplay = &"run"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=650414394]
+zoom = Vector2(3, 3)

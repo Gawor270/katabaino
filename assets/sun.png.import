@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csk1y0gk2adof"
-path="res://.godot/imported/sadboy_back.png-18762984f4f3c4ee1605e8f8df4e0d08.ctex"
+uid="uid://bc7v4um6raea8"
+path="res://.godot/imported/sun.png-96654e2514e117453f5b519ac98c70c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/sadboy_back.png"
-dest_files=["res://.godot/imported/sadboy_back.png-18762984f4f3c4ee1605e8f8df4e0d08.ctex"]
+source_file="res://assets/sun.png"
+dest_files=["res://.godot/imported/sun.png-96654e2514e117453f5b519ac98c70c7.ctex"]
 
 [params]
 

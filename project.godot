@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 Events="*uid://b1i65vt57ov47"
 PlayerData="*uid://ud5nvrjrrucv"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+
 [input]
 
 interact={

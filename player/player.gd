@@ -8,16 +8,20 @@ extends CharacterBody2D
 @onready var interact_ray = $InteractRay
 
 # Keeps track of where we are looking when we stop moving
-var facing_direction: Vector2 = Vector2.DOWN 
+var facing_direction: Vector2 = Vector2.DOWN
+
+func _ready() -> void:
+	if PlayerData.is_riding_bicycle:
+		speed = 90.0
 
 func _physics_process(_delta: float) -> void:
 	# 1. Get player input (using Godot's built-in arrow key actions)
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	
+
 	# 2. Apply movement
 	velocity = input_dir * speed
 	move_and_slide()
-	
+
 	# 3. Handle animations and raycast direction
 	update_facing_and_animations(input_dir)
 
@@ -51,14 +55,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Check if the key we just pressed was the "interact" action
 	if event.is_action_pressed("interact"):
 		
-		# Force the RayCast to update instantly before we check it
 		interact_ray.force_raycast_update()
-		
-		# Did the laser pointer hit an Area2D?
 		if interact_ray.is_colliding():
 			var target = interact_ray.get_collider()
-			
-			# Does the thing we hit have our custom function?
 			if target.has_method("_on_interacted"):
 				target._on_interacted()
 		

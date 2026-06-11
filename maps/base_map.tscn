@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://u4n607p5bif0"]
 
+[ext_resource type="Script" path="res://maps/base_map.gd" id="1_basemap"]
+
 [node name="BaseMap" type="Node2D" unique_id=706549194]
+script = ExtResource("1_basemap")
 
 [node name="FloorLayer" type="TileMapLayer" parent="." unique_id=1217231674]
 z_index = -1
@@ -12,6 +15,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Entities" type="Node2D" parent="YSortContainer" unique_id=1479647107]
+y_sort_enabled = true
 
 [node name="ForegroundLayer" type="TileMapLayer" parent="." unique_id=813865383]
 z_index = 10
