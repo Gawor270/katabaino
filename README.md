@@ -135,13 +135,10 @@ Wersja wykonywalna (Linux x86_64 / Windows) dostępna w sekcji **Releases** repo
 ## 7. Screenshoty
 
 ![Pokój startowy](screenshots/starting_room.png)
-*Pokój startowy – wnętrze domu*
 
 ![Wioska](screenshots/village.png)
-*Eksploracja – wejście do kościoła, rower do zebrania*
 
 ![Cmentarz](screenshots/cemetery.png)
-*Cmentarz – cel podróży*
 
 ---
 
