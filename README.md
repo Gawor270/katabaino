@@ -6,11 +6,9 @@
 
 ## 1. Opis gry
 
-**Katabaino** (gr. *καταβαίνω* – schodzić w dół, zstępować) to atmosferyczna gra eksploracyjna 2D osadzona w słowiańskim folklorze. Gracz wciela się w postać przemierzającą nocne wsie, lasy i cmentarze, napotykając po drodze istoty z mitologii słowiańskiej – rusałkę, upiora i fantomowego konia.
+**Katabaino** (gr. *καταβαίνω* – schodzić w dół, zstępować) to gra eksploracyjna 2D stawiająca na uczucie obcości.
 
-Koncepcja gry inspirowana jest slow-horror'owymi grami spacerującymi (*walking simulators*) pokroju *Yume Nikki* oraz słowiańską mitologią i ludowym nastrojem grozy – nie opartym na bezpośrednim zagrożeniu, lecz na poczuciu obcości i atmosferze. Pośrednią inspiracją była też literatura: ballada *Erlkönig* Goethego (obecna również w ścieżce dźwiękowej).
-
-Charakterystyczną cechą gry jest jej narracyjne tempo i klimat – brak systemu walki, skupienie na eksploracji i interakcji z otoczeniem, a muzyka klasyczna stanowiąca kontrapunkt do ponurej scenerii.
+Charakterystyczną cechą gry jest jej narracyjne tempo i klimat, brak systemu walki, skupienie na eksploracji i interakcji z otoczeniem.
 
 ---
 
@@ -30,34 +28,32 @@ Charakterystyczną cechą gry jest jej narracyjne tempo i klimat – brak system
 
 ### Świat
 
-Gra zbudowana jest z szeregu oddzielnych, połączonych ze sobą map 2D (widok z góry, top-down):
+Gra zbudowana jest z szeregu oddzielnych, połączonych ze sobą map 2D top-down:
 
 - **Pokój startowy** – scena tutorialowa, blokuje gracza do momentu potwierdzenia klawiszem
-- **Las** – główna przestrzeń eksploracyjna
-- **Głęboki las** – specjalna mapa z zapętlonym przewijaniem: gracz przekraczający krawędź pojawia się po drugiej stronie (efekt nieskończonej przestrzeni)
-- **Kościół** – wnętrze budynku z własną muzyką
-- **Cmentarz** – strefa docelowa
-
-Przejścia między mapami obsługiwane są przez system sygnałów (`Events.map_change_requested`) z efektem fade-in/fade-out. Każda mapa może definiować punkt spawnu gracza po załadowaniu (`Marker2D`).
+- **Las** – wstępna przestrzeń eksploracyjna
+- **Głęboki las** – specjalna mapa z zapętlonym przewijaniem: gracz przekraczający krawędź pojawia się po drugiej stronie
+- **Kościół**
+- **Cmentarz**
 
 ### Kamera
 
-Kamera śledzi postać gracza (`Camera2D` z wygładzaniem). W głębokim lesie przy teleportacji gracza do przeciwległej krawędzi resetowane jest wygładzanie kamery, żeby nie powstawał artefakt „skoku".
+Kamera śledzi postać gracza (`Camera2D` z wygładzaniem).
 
 ### Postać gracza
 
 - Ruch ośmiokierunkowy (WASD / strzałki), prędkość bazowa: **45 px/s**
 - Kierunek patrzenia zapamiętywany po zatrzymaniu
-- System interakcji oparty na **RayCast2D** – rzut promienia w kierunku patrzenia (16 px), wywołanie metody `_on_interacted()` na trafionej kolizji
+- System interakcji oparty na **RayCast2D** rzut promienia w kierunku patrzenia (16 px), wywołanie metody `_on_interacted()` na trafionej kolizji
 - Globalny stan gracza (`PlayerData` – Autoload): przechowuje informację o posiadaniu i użyciu roweru
 
 ### Przedmioty i ekwipunek
 
 | Przedmiot | Efekt | Klawisz |
 |---|---|---|
-| **Rower** | Podnosi prędkość do 90 px/s (x2) | `X` – przełącznik |
+| **Rower** | Podnosi prędkość do 90 px/s (x2) |
 
-Rower podnoszony jest z ziemi przez interakcję (`Z`). Po podniesieniu znika z mapy i nie można go podnieść ponownie (persistencja przez `PlayerData`).
+Rower podnoszony jest z ziemi przez interakcję (`Z`). Po podniesieniu znika z mapy i nie można go podnieść ponownie. Umożliwia klikajać `X` przyśpieszenie gracza.
 
 ### NPCe
 
@@ -82,8 +78,6 @@ Rower podnoszony jest z ziemi przez interakcję (`Z`). Po podniesieniu znika z m
 | Sprite postaci gracza (`sadboy.ase`) | Wykonany ręcznie w Aseprite |
 | Sprite rusałki (`rusalka.ase`) | Wykonany ręcznie w Aseprite |
 | Sprite gargulca (`gargulec.ase`) | Wykonany ręcznie w Aseprite |
-| Animacja roweru (`bike.ase`) | Wykonana ręcznie w Aseprite |
-| Grafika kościoła (`church_pixel_art.png`) | Wykonana ręcznie |
 | Tileset lasu (`forest_tileset.tres`, `trees.tres`) | Zaimportowany z zewnętrznych źródeł |
 | Tileset wnętrz (`Tileset_Interior Wood_Gnomenlied.png`) | Zaimportowany – Gnomenlied (itch.io) |
 | Obóz (`Pixel Camping Pack 32x32`) | Zaimportowany pack (itch.io) |
@@ -96,9 +90,6 @@ Rower podnoszony jest z ziemi przez interakcję (`Z`). Po podniesieniu znika z m
 | Asset | Źródło |
 |---|---|
 | `erlkonig_slow.ogg` | Klasyczna ballada Schuberta *Erlkönig* – nagranie publiczne |
-| `rachmaninoff-elegie-op-3-no-1.ogg` | Rachmaninoff *Élégie op. 3 nr 1* – nagranie publiczne |
-| `prelude-f-sharp-minor.ogg` | Preludium fis-moll – nagranie publiczne |
-| `intro_music.mp3` | Zaimportowany track ambientowy |
 | `night-ambience.mp3` | Zaimportowany ambient nocny |
 | `wind.mp3` | Efekt wiatru |
 | `church-bell.mp3` | Efekt dzwonu kościelnego |
@@ -109,8 +100,9 @@ Rower podnoszony jest z ziemi przez interakcję (`Z`). Po podniesieniu znika z m
 
 AI było wykorzystane pomocniczo w procesie developmentu:
 
-- **Asystent kodowania (Claude)** – pomoc przy projektowaniu architektury systemu sygnałów między mapami, systemu przejść scen z punktami spawnu oraz debugowanie logiki maszyny stanów NPC
+- **Asystent kodowania (Claude)** – pomoc przy projektowaniu architektury systemu sygnałów między mapami, systemu przejść scen z punktami spawnu oraz debugowanie
 - **Grafika** – sprite'y postaci wykonane ręcznie w Aseprite; żadna grafika nie była generowana przez AI
+- **Projekt map** - mapy były projektowane ręcznie
 - **Muzyka** – żadna muzyka nie była generowana przez AI; użyto nagrań klasycznych z domeny publicznej oraz gotowych efektów dźwiękowych
 - **Zachowanie postaci** – wbudowana prosta maszyna stanów (`IDLE/WANDER`) zaimplementowana ręcznie w GDScript; brak uczenia maszynowego
 
@@ -142,7 +134,14 @@ Wersja wykonywalna (Linux x86_64 / Windows) dostępna w sekcji **Releases** repo
 
 ## 7. Screenshoty
 
-*Screenshoty z rozgrywki do uzupełnienia.*
+![Pokój startowy](screenshots/starting_room.png)
+*Pokój startowy – wnętrze domu*
+
+![Wioska](screenshots/village.png)
+*Eksploracja – wejście do kościoła, rower do zebrania*
+
+![Cmentarz](screenshots/cemetery.png)
+*Cmentarz – cel podróży*
 
 ---
 
