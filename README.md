@@ -1,6 +1,6 @@
 # Katabaino
 
-![](screenshots/horse.png)
+![Cmentarz](screenshots/cemetery.png)
 
 **Autor:** Bernard Gawor
 
@@ -140,7 +140,8 @@ Wersja wykonywalna (Linux x86_64 / Windows) dostępna w sekcji **Releases** repo
 
 ![Wioska](screenshots/village.png)
 
-![Cmentarz](screenshots/cemetery.png)
+![Intro](screenshots/horse.png)
+
 
 ---
 
