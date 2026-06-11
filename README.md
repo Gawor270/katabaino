@@ -1,15 +1,14 @@
 # Katabaino
 
-**Autor:** Bernard Gawor
-
 ![](screenshots/horse.png)
+
+**Autor:** Bernard Gawor
 
 ---
 
 ## 1. Opis gry
 
 **Katabaino** (gr. *καταβαίνω* – schodzić w dół, zstępować) to gra eksploracyjna 2D stawiająca na uczucie obcości.
-
 Charakterystyczną cechą gry jest jej narracyjne tempo i klimat, brak systemu walki, skupienie na eksploracji i interakcji z otoczeniem.
 
 ---
@@ -46,8 +45,9 @@ Kamera śledzi postać gracza (`Camera2D` z wygładzaniem).
 
 - Ruch ośmiokierunkowy (WASD / strzałki), prędkość bazowa: **45 px/s**
 - Kierunek patrzenia zapamiętywany po zatrzymaniu
-- System interakcji oparty na **RayCast2D** rzut promienia w kierunku patrzenia (16 px), wywołanie metody `_on_interacted()` na trafionej kolizji
-- Globalny stan gracza (`PlayerData` – Autoload): przechowuje informację o posiadaniu i użyciu roweru
+- System interakcji oparty na **RayCast2D** rzut promienia w kierunku patrzenia (16 px), wywołanie metody `_on_interacted()` na trafionej kolizji,
+która umożliwia uruchomienie dowolnego skryptu w GDScript
+- Globalny stan gracza (`PlayerData`): przechowuje informację o posiadaniu i użyciu roweru
 
 ### Przedmioty i ekwipunek
 
@@ -77,9 +77,9 @@ Rower podnoszony jest z ziemi przez interakcję (`Z`). Po podniesieniu znika z m
 
 | Asset | Źródło |
 |---|---|
-| Sprite postaci gracza (`sadboy.ase`) | Wykonany ręcznie w Aseprite |
-| Sprite rusałki (`rusalka.ase`) | Wykonany ręcznie w Aseprite |
-| Sprite gargulca (`gargulec.ase`) | Wykonany ręcznie w Aseprite |
+| Sprite postaci gracza (`sadboy.ase`) | Wykonany ręcznie w Libresprite |
+| Sprite rusałki (`rusalka.ase`) | Wykonany ręcznie w Libresprite |
+| Sprite gargulca (`gargulec.ase`) | Wykonany ręcznie w Libresprite |
 | Tileset lasu (`forest_tileset.tres`, `trees.tres`) | Zaimportowany z zewnętrznych źródeł |
 | Tileset wnętrz (`Tileset_Interior Wood_Gnomenlied.png`) | Zaimportowany – Gnomenlied (itch.io) |
 | Obóz (`Pixel Camping Pack 32x32`) | Zaimportowany pack (itch.io) |
@@ -103,7 +103,7 @@ Rower podnoszony jest z ziemi przez interakcję (`Z`). Po podniesieniu znika z m
 AI było wykorzystane pomocniczo w procesie developmentu:
 
 - **Asystent kodowania (Claude)** – pomoc przy projektowaniu architektury systemu sygnałów między mapami, systemu przejść scen z punktami spawnu oraz debugowanie
-- **Grafika** – sprite'y postaci wykonane ręcznie w Aseprite; żadna grafika nie była generowana przez AI
+- **Grafika** – sprite'y postaci wykonane ręcznie w Libresprite; żadna grafika nie była generowana przez AI
 - **Projekt map** - mapy były projektowane ręcznie
 - **Muzyka** – żadna muzyka nie była generowana przez AI; użyto nagrań klasycznych z domeny publicznej oraz gotowych efektów dźwiękowych
 - **Zachowanie postaci** – wbudowana prosta maszyna stanów (`IDLE/WANDER`) zaimplementowana ręcznie w GDScript; brak uczenia maszynowego
